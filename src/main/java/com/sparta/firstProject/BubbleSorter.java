@@ -3,10 +3,12 @@ package com.sparta.firstProject;
 public class BubbleSorter {
 
 
-    public String bubbleSort(int intArray[]){
+    public static void bubbleSort(int intArray[]){
 
-        for(int i = 0; i < intArray.length -1; i++){
-            for(int j = 0 ; j < intArray.length -1; j++){
+        int arrayLength = intArray.length;
+
+        for(int i = 0; i < arrayLength -1; i++){
+            for(int j = 0 ; j < arrayLength -1; j++){
                 if(intArray[j]>intArray[j+1]){
                     int temp = intArray[j];
                     intArray[j] = intArray[j+1];
@@ -15,6 +17,7 @@ public class BubbleSorter {
             }
         }
 
+        /*
         StringBuilder tempString = new StringBuilder();
         for(int i = 0; i < intArray.length; i++){
             if(i < intArray.length - 1) {
@@ -25,7 +28,7 @@ public class BubbleSorter {
             }
         }
         return tempString.toString();
-
+*/
     }
 
 }

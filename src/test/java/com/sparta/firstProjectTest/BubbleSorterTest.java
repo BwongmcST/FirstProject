@@ -9,6 +9,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.Arrays;
+
 public class BubbleSorterTest {
 
     @Test
@@ -17,8 +19,8 @@ public class BubbleSorterTest {
         int[] testArray = {1,61,33,13,89,0,60};
         bubbleSorter.bubbleSort(testArray);
 
-        String actual = bubbleSorter.bubbleSort(testArray);
-        String expected = "0, 1, 13, 33, 60, 61, 89";
+        String actual = Arrays.toString(testArray);
+        String expected = "[0, 1, 13, 33, 60, 61, 89]";
         Assertions.assertEquals(actual,expected);
     }
 }
