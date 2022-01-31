@@ -4,20 +4,21 @@ import com.sparta.firstProject.BubbleSorter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 public class BubbleSorterTest {
 
-    private BubbleSorter bubbleSorter;
-    @BeforeEach
+    @Test
+    public void testBubbleSorter(){
+        BubbleSorter bubbleSorter = new BubbleSorter();
+        int[] testArray = {1,61,33,13,89,0,60};
+        bubbleSorter.bubbleSort(testArray);
 
-    void setUp(){ bubbleSorter = new BubbleSorter();}
-
-    @ParameterizedTest
-    @DisplayName("Use Bubble Sort to sort all the interger in an array")
-    public void UseBubbleSortTotSortAllIntergerInArray(int[] intArray, String expected){
-        Assertions.assertEquals(expected,bubbleSorter.bubbleSort(intArray));
+        String actual = bubbleSorter.bubbleSort(testArray);
+        String expected = "0, 1, 13, 33, 60, 61, 89";
+        Assertions.assertEquals(actual,expected);
     }
 }
