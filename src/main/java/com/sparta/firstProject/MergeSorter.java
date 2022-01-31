@@ -1,5 +1,7 @@
 package com.sparta.firstProject;
 
+import java.util.Arrays;
+
 public class MergeSorter {
 
     public static void mergeSort(int[] intArray){
@@ -18,11 +20,11 @@ public class MergeSorter {
         }
 
         for(int i = midIndex; i<arrayLength ; i++) {
-            rightHalf[i -midIndex] = intArray[i - midIndex];
+            rightHalf[i -midIndex] = intArray[i];
         }
 
         mergeSort(leftHalf);
-
+        mergeSort(rightHalf);
 
         merge(intArray, leftHalf, rightHalf);
     }
@@ -51,7 +53,7 @@ public class MergeSorter {
             m++;
         }
         while ( r< rightSize){
-            intArray[m] = leftHalf[r];
+            intArray[m] = rightHalf[r];
             r++;
             m++;
         }

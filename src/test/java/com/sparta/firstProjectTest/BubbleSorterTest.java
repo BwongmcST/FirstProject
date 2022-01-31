@@ -14,13 +14,13 @@ import java.util.Arrays;
 public class BubbleSorterTest {
 
     @Test
-    public void testBubbleSorter(){
-        BubbleSorter bubbleSorter = new BubbleSorter();
-        int[] testArray = {1,61,33,13,89,0,60};
-        bubbleSorter.bubbleSort(testArray);
+        public void testBubbleSorter(){
+            BubbleSorter bubbleSorter = new BubbleSorter();
+            int[] testArray = {1,61,33,13,89,0,60};
+            bubbleSorter.bubbleSort(testArray);
 
-        String actual = Arrays.toString(testArray);
-        String expected = "[0, 1, 13, 33, 60, 61, 89]";
-        Assertions.assertEquals(actual,expected);
+            String actual = Arrays.toString(testArray);
+            String expected = "[0, 1, 13, 33, 60, 61, 89]";
+            Assertions.assertEquals(actual,expected);
     }
 }
