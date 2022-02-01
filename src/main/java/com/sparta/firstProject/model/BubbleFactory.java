@@ -1,6 +1,6 @@
 package com.sparta.firstProject.model;
 
-public class BubbleSorterInstance extends SorterInstance {
+public class BubbleFactory extends SorterFactory {
 
     @Override
     public Sorter getInstance(){

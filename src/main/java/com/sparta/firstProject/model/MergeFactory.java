@@ -1,6 +1,6 @@
 package com.sparta.firstProject.model;
 
-public class MergeSorterInstance extends SorterInstance {
+public class MergeFactory extends SorterFactory {
 
     @Override
     public Sorter getInstance(){

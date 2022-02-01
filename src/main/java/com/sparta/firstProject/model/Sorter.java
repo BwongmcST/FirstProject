@@ -2,5 +2,5 @@ package com.sparta.firstProject.model;
 
 public interface Sorter {
 
-    void sorter(String sortMethod, int[] intArray);
+    void sort(int[] intArray);
 }

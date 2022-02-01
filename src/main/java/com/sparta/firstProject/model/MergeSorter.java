@@ -3,7 +3,7 @@ package com.sparta.firstProject.model;
 public class MergeSorter implements Sorter {
 
     @Override
-    public void sorter(String sortMethod, int[] intArray){
+    public void sort(int[] intArray){
         int arrayLength = intArray.length;
 
         if(arrayLength < 2){
@@ -22,8 +22,8 @@ public class MergeSorter implements Sorter {
             rightHalf[i -midIndex] = intArray[i];
         }
 
-        sorter(sortMethod, leftHalf);
-        sorter(sortMethod, rightHalf);
+        sort(leftHalf);
+        sort(rightHalf);
 
         merge(intArray, leftHalf, rightHalf);
     }

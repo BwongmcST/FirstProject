@@ -1,8 +1,6 @@
 package com.sparta.firstProject;
 
-import com.sparta.firstProject.model.BubbleSorter;
-import com.sparta.firstProject.model.MergeSorter;
-import com.sparta.firstProject.model.Sorter;
+import com.sparta.firstProject.model.*;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -17,25 +15,20 @@ public class Main {
         int[] testArrayBubble = Arrays.copyOf(testArray, testArray.length);
         int[] testArrayMerge = Arrays.copyOf(testArray, testArray.length);
 
-        Sorter bubbleSorter = new BubbleSorter();
-        bubbleSorter.sorter(sortMethod, testArrayBubble);
-        System.out.println(Arrays.toString(testArrayBubble));
-
-        Sorter mergeSorter = new MergeSorter();
-        mergeSorter.sorter(sortMethod, testArrayMerge);
-
-
-        System.out.println(Arrays.toString(testArrayMerge));
+        Sorter sorter = getSortMethod(sortMethod);
+        sorter.sort(testArray);
+        System.out.println(Arrays.toString(testArray));
         }
 
 
         public static Sorter getSortMethod(String sortMethod) {
-        if(sortMethod.equals("Bubble")){
-            return new BubbleSorter();
-        }else if(sortMethod.equals("Merge")){
-            return new MergeSorter();
-        }else
-            return null;
+
+        SorterFactory sf = switch (sortMethod.toLowerCase()){
+            case "bubble" -> new BubbleFactory();
+            case "merge" -> new MergeFactory();
+            default -> null;
+        };
+            return sf.getInstance();
     }
 
 }
