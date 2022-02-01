@@ -4,13 +4,15 @@ import com.sparta.firstProject.model.MergeFactory;
 import com.sparta.firstProject.model.Sorter;
 import com.sparta.firstProject.model.SorterFactory;
 
+import java.util.Arrays;
+
 public class SortController {
 
-    public void sorting(String sortMethod){
 
-        int[] testArray = {110,22,62,31,66,71,398,1,69,200,70};
+    public String sorting(String sortMethod, int[] intArray){
         Sorter sorter = getSortMethod(sortMethod);
-        sorter.sort(testArray);
+        sorter.sort(intArray);
+        return Arrays.toString(intArray);
     }
     public Sorter getSortMethod(String sortMethod) {
 

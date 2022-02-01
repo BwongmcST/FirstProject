@@ -14,9 +14,11 @@ public class Main {
         //int[] testArrayMerge = Arrays.copyOf(testArray, testArray.length);
 
         SortView sortView = new SortView();
+        int[] intArray = sortView.getIntArray();
         String sortMethod = sortView.getSortMethod();
         SortController sortController = new SortController();
-        //String result = sortController.sorting();
+        String result = sortController.sorting(sortMethod,intArray);
+        sortView.displaySortResult(result);
 
         }
 

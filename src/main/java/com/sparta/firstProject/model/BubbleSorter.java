@@ -1,10 +1,12 @@
 package com.sparta.firstProject.model;
 
+import java.util.Arrays;
+
 public class BubbleSorter implements Sorter{
 
 
-    public void sort(int intArray[]){
-
+    public String sort(int intArray[]){
+        System.out.println("bubble-sorting");
         int arrayLength = intArray.length;
 
         for(int i = 0; i < arrayLength -1; i++){
@@ -16,6 +18,7 @@ public class BubbleSorter implements Sorter{
                 }
             }
         }
+        return Arrays.toString(intArray);
 
         /*
         StringBuilder tempString = new StringBuilder();
