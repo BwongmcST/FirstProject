@@ -3,7 +3,7 @@ package com.sparta.firstProject.model;
 public class BubbleSorter implements Sorter{
 
 
-    public void sorter(int intArray[]){
+    public void sorter(String sortMethod, int intArray[]){
 
         int arrayLength = intArray.length;
 
