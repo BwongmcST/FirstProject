@@ -9,17 +9,21 @@ public class SortView {
 
     public int[] getIntArray(){
         RandomIntGenerator randomIntGenerator = new RandomIntGenerator();
-        System.out.printf("Please input array length: ");
         Scanner scanner = new Scanner(System.in);
+        System.out.printf("Please input minimum value: ");
+        int inputMin = scanner.nextInt();
+        System.out.printf("Please input maximum value: ");
+        int inputMax = scanner.nextInt();
+        System.out.printf("Please input array length: ");
         int inputLength = scanner.nextInt();
         System.out.println("Integer array generated: ");
-        int[] intArray = randomIntGenerator.generateInt(inputLength);
-        System.out.printf(Arrays.toString(intArray));
+        int[] intArray = randomIntGenerator.generateInt(inputLength,inputMin,inputMax);
+        System.out.println(Arrays.toString(intArray));
         return intArray;
     }
 
     public String getSortMethod(){
-        System.out.println("Please enter sort method (bubble/merge): ");
+        System.out.printf("Please enter sort method (bubble/merge): ");
         Scanner scanner = new Scanner(System.in);
         String sortMethod = scanner.next();
         return sortMethod;
