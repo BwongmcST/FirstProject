@@ -1,9 +1,9 @@
-package com.sparta.firstProject;
+package com.sparta.firstProject.model;
 
-public class BubbleSorter {
+public class BubbleSorter implements Sorter{
 
 
-    public static void bubbleSort(int intArray[]){
+    public void sorter(int intArray[]){
 
         int arrayLength = intArray.length;
 

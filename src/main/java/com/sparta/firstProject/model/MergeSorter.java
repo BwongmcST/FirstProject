@@ -1,10 +1,9 @@
-package com.sparta.firstProject;
+package com.sparta.firstProject.model;
 
-import java.util.Arrays;
+public class MergeSorter implements Sorter {
 
-public class MergeSorter {
-
-    public static void mergeSort(int[] intArray){
+    @Override
+    public void sorter(int[] intArray){
         int arrayLength = intArray.length;
 
         if(arrayLength < 2){
@@ -23,13 +22,14 @@ public class MergeSorter {
             rightHalf[i -midIndex] = intArray[i];
         }
 
-        mergeSort(leftHalf);
-        mergeSort(rightHalf);
+        sorter(leftHalf);
+        sorter(rightHalf);
 
         merge(intArray, leftHalf, rightHalf);
     }
 
-    private static void merge (int[] intArray, int[] leftHalf, int[] rightHalf){
+    private void merge (int[] intArray, int[] leftHalf, int[] rightHalf){
+
         int leftSize = leftHalf.length;
         int rightSize = rightHalf.length;
 
@@ -57,7 +57,6 @@ public class MergeSorter {
             r++;
             m++;
         }
-
 
     }
 }
