@@ -6,7 +6,7 @@ import com.sparta.firstProject.model.SorterFactory;
 
 import java.util.Arrays;
 
-import static com.sparta.firstProject.Main.logger;
+import static com.sparta.firstProject.main.Main.logger;
 
 public class SortController {
 

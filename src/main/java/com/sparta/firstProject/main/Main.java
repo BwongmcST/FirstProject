@@ -1,4 +1,4 @@
-package com.sparta.firstProject;
+package com.sparta.firstProject.main;
 
 import com.sparta.firstProject.controller.SortController;
 import com.sparta.firstProject.view.SortView;
@@ -13,7 +13,7 @@ public class Main {
 
         //int[] testArrayBubble = Arrays.copyOf(testArray, testArray.length);
         //int[] testArrayMerge = Arrays.copyOf(testArray, testArray.length);
-        logger.info("Launch sorting application");
+        logger.debug("Launch sorting application");
         SortView sortView = new SortView();
         int[] intArray = sortView.getIntArray();
         String sortMethod = sortView.getSortMethod();

@@ -2,7 +2,7 @@ package com.sparta.firstProject.model;
 
 import java.util.Arrays;
 
-import static com.sparta.firstProject.Main.logger;
+import static com.sparta.firstProject.main.Main.logger;
 
 public class BubbleSorter implements Sorter{
 
