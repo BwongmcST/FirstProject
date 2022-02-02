@@ -2,11 +2,12 @@ package com.sparta.firstProject.model;
 
 import java.util.Arrays;
 
+import static com.sparta.firstProject.Main.logger;
+
 public class MergeSorter implements Sorter {
 
     @Override
     public String sort(int[] intArray){
-        System.out.println("Merge-sorting");
         int arrayLength = intArray.length;
 
         if(arrayLength < 2){
@@ -29,7 +30,10 @@ public class MergeSorter implements Sorter {
         sort(rightHalf);
 
         merge(intArray, leftHalf, rightHalf);
+
+        logger.debug("Merge sort progressing: "+ Arrays.toString(intArray));
         return Arrays.toString(intArray);
+
     }
 
     private void merge (int[] intArray, int[] leftHalf, int[] rightHalf){

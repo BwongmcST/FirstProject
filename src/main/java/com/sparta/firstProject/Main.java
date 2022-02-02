@@ -11,11 +11,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-
         //int[] testArrayBubble = Arrays.copyOf(testArray, testArray.length);
         //int[] testArrayMerge = Arrays.copyOf(testArray, testArray.length);
-        logger.info("Start sorting application");
+        logger.info("Launch sorting application");
         SortView sortView = new SortView();
         int[] intArray = sortView.getIntArray();
         String sortMethod = sortView.getSortMethod();

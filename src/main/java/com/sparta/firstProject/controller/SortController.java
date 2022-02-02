@@ -6,10 +6,14 @@ import com.sparta.firstProject.model.SorterFactory;
 
 import java.util.Arrays;
 
+import static com.sparta.firstProject.Main.logger;
+
 public class SortController {
 
 
     public String sorting(String sortMethod, int[] intArray){
+        logger.debug("Received sort method: " + sortMethod);
+        logger.debug("int Array: " + Arrays.toString(intArray));
         Sorter sorter = getSortMethod(sortMethod);
         sorter.sort(intArray);
         return Arrays.toString(intArray);

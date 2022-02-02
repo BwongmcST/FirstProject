@@ -2,14 +2,16 @@ package com.sparta.firstProject.model;
 
 import java.util.Arrays;
 
+import static com.sparta.firstProject.Main.logger;
+
 public class BubbleSorter implements Sorter{
 
 
     public String sort(int intArray[]){
-        System.out.println("bubble-sorting");
         int arrayLength = intArray.length;
 
         for(int i = 0; i < arrayLength -1; i++){
+            logger.debug("Bubble sort progressing: "+ Arrays.toString(intArray));
             for(int j = 0 ; j < arrayLength -1; j++){
                 if(intArray[j]>intArray[j+1]){
                     int temp = intArray[j];
@@ -18,6 +20,7 @@ public class BubbleSorter implements Sorter{
                 }
             }
         }
+        logger.debug("Bubble sort result: "+ Arrays.toString(intArray));
         return Arrays.toString(intArray);
 
         /*
