@@ -213,3 +213,23 @@ FILE [DEBUG] 2022-02-02 18:23:36,706 main Sorter Logger - Merge sort progressing
 FILE [DEBUG] 2022-02-02 18:23:36,706 main Sorter Logger - Merge sort progressing: [0, 60]
 FILE [DEBUG] 2022-02-02 18:23:36,706 main Sorter Logger - Merge sort progressing: [0, 13, 60, 89]
 FILE [DEBUG] 2022-02-02 18:23:36,706 main Sorter Logger - Merge sort progressing: [0, 1, 13, 33, 60, 61, 89]
+FILE [DEBUG] 2022-02-02 19:42:14,849 main Sorter Logger - Launch sorting application
+FILE [WARN ] 2022-02-02 19:42:17,007 main Sorter Logger - Incorrect input detected: Non-int value
+FILE [DEBUG] 2022-02-02 19:42:22,852 main Sorter Logger - Input minimum value: 0
+FILE [WARN ] 2022-02-02 19:42:24,549 main Sorter Logger - Incorrect input detected: Non-int value / minInt > maxInt
+FILE [DEBUG] 2022-02-02 19:42:25,663 main Sorter Logger - Input maximum value: 100
+FILE [DEBUG] 2022-02-02 19:42:27,165 main Sorter Logger - Input array length: 10
+FILE [DEBUG] 2022-02-02 19:42:27,165 main Sorter Logger - Array generated: [49, 43, 14, 97, 52, 56, 4, 44, 27, 67]
+FILE [DEBUG] 2022-02-02 19:42:32,257 main Sorter Logger - Input sortMethod: merge
+FILE [DEBUG] 2022-02-02 19:42:32,267 main Sorter Logger - Received sort method: merge
+FILE [DEBUG] 2022-02-02 19:42:32,267 main Sorter Logger - int Array: [49, 43, 14, 97, 52, 56, 4, 44, 27, 67]
+FILE [DEBUG] 2022-02-02 19:42:32,272 main Sorter Logger - Merge sort progressing: [43, 49]
+FILE [DEBUG] 2022-02-02 19:42:32,272 main Sorter Logger - Merge sort progressing: [52, 97]
+FILE [DEBUG] 2022-02-02 19:42:32,272 main Sorter Logger - Merge sort progressing: [14, 52, 97]
+FILE [DEBUG] 2022-02-02 19:42:32,272 main Sorter Logger - Merge sort progressing: [14, 43, 49, 52, 97]
+FILE [DEBUG] 2022-02-02 19:42:32,272 main Sorter Logger - Merge sort progressing: [4, 56]
+FILE [DEBUG] 2022-02-02 19:42:32,272 main Sorter Logger - Merge sort progressing: [27, 67]
+FILE [DEBUG] 2022-02-02 19:42:32,272 main Sorter Logger - Merge sort progressing: [27, 44, 67]
+FILE [DEBUG] 2022-02-02 19:42:32,272 main Sorter Logger - Merge sort progressing: [4, 27, 44, 56, 67]
+FILE [DEBUG] 2022-02-02 19:42:32,272 main Sorter Logger - Merge sort progressing: [4, 14, 27, 43, 44, 49, 52, 56, 67, 97]
+FILE [DEBUG] 2022-02-02 19:42:32,272 main Sorter Logger - Final sort result: [4, 14, 27, 43, 44, 49, 52, 56, 67, 97]
