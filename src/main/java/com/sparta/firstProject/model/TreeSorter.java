@@ -1,23 +1,28 @@
 package com.sparta.firstProject.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TreeSorter implements Sorter {
    Node node;
+   List<Integer> outPutIntegerList = new ArrayList<Integer>();
 
     public static void main(String[] args) {
         int[] arr = {50, 30, 70, 15, 7, 62, 22, 35, 87, 22};
         TreeSorter treeSorter = new TreeSorter();
-        treeSorter.sort(arr);
+        System.out.println(treeSorter.sort(arr));
     }
 
 
     @Override
     public String sort(int[] intArray) {
+
         node = new Node(intArray[0]);
         for(int i:intArray){
             insertNode(node, i);
         }
-        sortNode(node);
-        return null;
+        sortNodes(node);
+        return outPutIntegerList.toString();
     }
 
     public Node insertNode(Node node, int value) {
@@ -33,11 +38,11 @@ public class TreeSorter implements Sorter {
     return node;
     }
 
-    public void sortNode(Node node){
+    public void sortNodes(Node node){
         if(node != null){
-            sortNode(node.left);
-            System.out.printf(node.value + " ");
-            sortNode(node.right);
+            sortNodes(node.left);
+            outPutIntegerList.add(node.value);
+            sortNodes(node.right);
         }
     }
 
