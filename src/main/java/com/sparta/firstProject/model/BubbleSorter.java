@@ -6,7 +6,7 @@ import static com.sparta.firstProject.main.Main.logger;
 
 public class BubbleSorter implements Sorter{
 
-
+    @Override
     public String sort(int intArray[]){
         int arrayLength = intArray.length;
 
