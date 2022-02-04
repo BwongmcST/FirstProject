@@ -56,10 +56,10 @@ public class SortView {
             catch(InputMismatchException me) {
                 me.printStackTrace();
                 scanner.next();
-                logger.warn("Incorrect input detected: Non-int value");
+                logger.warn("Incorrect input detected: Non-int value / array length incorrect");
                 isValidInput = false;
             }
-        }while (!isValidInput);
+        }while (!isValidInput || inputLength > (inputMax-inputMin));
 
         logger.debug("Input array length: "+ inputLength);
 
@@ -71,7 +71,7 @@ public class SortView {
     }
 
     public String getSortMethod(){
-        System.out.printf("Please enter sort method (bubble/merge): ");
+        System.out.printf("Please enter sort method (bubble/merge/tree): ");
         Scanner scanner = new Scanner(System.in);
         String sortMethod = scanner.next();
         logger.debug("Input sortMethod: "+ sortMethod);
@@ -82,4 +82,5 @@ public class SortView {
         logger.debug("Final sort result: "+ result);
         System.out.println(result);
     }
+
 }
