@@ -21,49 +21,52 @@ public class SortView {
 
         do{
          isValidInput = true;
-         System.out.printf("Please input minimum value: ");
+         System.out.println("Please input minimum value: ");
 
-         try{inputMin = scanner.nextInt();}
+         try{inputMin = scanner.nextInt();
+                logger.debug("Received minimum value: "+ inputMin);}
             catch(InputMismatchException me) {
-                me.printStackTrace();
+                //me.printStackTrace();
                 scanner.next();
                 logger.warn("Incorrect input detected: Non-int value");
                 isValidInput = false;
             }
         }while (!isValidInput);
 
-        logger.debug("Input minimum value: "+ inputMin);
+        logger.debug("Valid minimum value: "+ inputMin);
 
         do {
             isValidInput = true;
-            System.out.printf("Please input maximum value: ");
-            try{inputMax = scanner.nextInt();}
+            System.out.println("Please input maximum value: ");
+            try{inputMax = scanner.nextInt();
+                logger.debug("Received maximum value: "+ inputMax);}
             catch(InputMismatchException me) {
                 me.printStackTrace();
                 scanner.next();
-                logger.warn("Incorrect input detected: Non-int value / minInt > maxInt");
+                logger.warn("Incorrect input detected: Non-int value");
                 isValidInput = false;
             }
          }while (!isValidInput || inputMin >= inputMax);
 
-        logger.debug("Input maximum value: "+ inputMax);
+        logger.debug("Valid maximum value: "+ inputMax);
 
 
         do {
             isValidInput = true;
-            System.out.printf("Please input array length: ");
-            try {inputLength = scanner.nextInt();}
+            System.out.println("Please input array length: ");
+            try {inputLength = scanner.nextInt();
+                logger.debug("Received array length: "+ inputLength);}
             catch(InputMismatchException me) {
                 me.printStackTrace();
                 scanner.next();
-                logger.warn("Incorrect input detected: Non-int value / array length incorrect");
+                logger.warn("Incorrect input detected: Non-int value");
                 isValidInput = false;
             }
         }while (!isValidInput || inputLength > (inputMax-inputMin));
 
-        logger.debug("Input array length: "+ inputLength);
+        logger.debug("Valid array length: "+ inputLength);
 
-        System.out.printf("Integer array generated: ");
+        System.out.println("Integer array generated: ");
         int[] intArray = randomIntGenerator.generateInt(inputLength,inputMin,inputMax);
         System.out.println(Arrays.toString(intArray));
         logger.debug("Array generated: "+ Arrays.toString(intArray));
@@ -71,7 +74,7 @@ public class SortView {
     }
 
     public String getSortMethod(){
-        System.out.printf("Please enter sort method (bubble/merge/tree): ");
+        System.out.println("Please enter sort method (bubble/merge/tree): ");
         Scanner scanner = new Scanner(System.in);
         String sortMethod = scanner.next();
         logger.debug("Input sortMethod: "+ sortMethod);
