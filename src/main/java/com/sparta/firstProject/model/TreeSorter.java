@@ -7,13 +7,6 @@ public class TreeSorter implements Sorter {
    Node node;
    List<Integer> outPutIntegerList = new ArrayList<Integer>();
 
-    public static void main(String[] args) {
-        int[] arr = {50, 30, 70, 15, 7, 62, 22, 35, 87, 22};
-        TreeSorter treeSorter = new TreeSorter();
-        System.out.println(treeSorter.sort(arr));
-    }
-
-
     @Override
     public String sort(int[] intArray) {
 
