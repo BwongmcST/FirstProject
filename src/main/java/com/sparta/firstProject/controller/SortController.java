@@ -1,8 +1,5 @@
 package com.sparta.firstProject.controller;
-import com.sparta.firstProject.model.BubbleFactory;
-import com.sparta.firstProject.model.MergeFactory;
-import com.sparta.firstProject.model.Sorter;
-import com.sparta.firstProject.model.SorterFactory;
+import com.sparta.firstProject.model.*;
 
 import java.util.Arrays;
 
@@ -23,6 +20,7 @@ public class SortController {
         SorterFactory sf = switch (sortMethod.toLowerCase()){
             case "bubble" -> new BubbleFactory();
             case "merge" -> new MergeFactory();
+            case "tree" -> new TreeFactory();
             default -> null;
         };
         return sf.getInstance();
