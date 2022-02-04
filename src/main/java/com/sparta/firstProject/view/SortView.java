@@ -2,9 +2,9 @@ package com.sparta.firstProject.view;
 
 import com.sparta.firstProject.model.RandomIntGenerator;
 
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import javax.swing.*;
+import java.sql.SQLOutput;
+import java.util.*;
 
 import static com.sparta.firstProject.main.Main.logger;
 
@@ -41,7 +41,7 @@ public class SortView {
             try{inputMax = scanner.nextInt();
                 logger.debug("Received maximum value: "+ inputMax);}
             catch(InputMismatchException me) {
-                me.printStackTrace();
+                //me.printStackTrace();
                 scanner.next();
                 logger.warn("Incorrect input detected: Non-int value");
                 isValidInput = false;
@@ -57,7 +57,7 @@ public class SortView {
             try {inputLength = scanner.nextInt();
                 logger.debug("Received array length: "+ inputLength);}
             catch(InputMismatchException me) {
-                me.printStackTrace();
+                //me.printStackTrace();
                 scanner.next();
                 logger.warn("Incorrect input detected: Non-int value");
                 isValidInput = false;
@@ -74,10 +74,26 @@ public class SortView {
     }
 
     public String getSortMethod(){
-        System.out.println("Please enter sort method (bubble/merge/tree): ");
-        Scanner scanner = new Scanner(System.in);
-        String sortMethod = scanner.next();
-        logger.debug("Input sortMethod: "+ sortMethod);
+        boolean isValidInput = true;
+        String sortMethod;
+
+        List<String> validMethodList = new ArrayList<>();
+        validMethodList.add("merge");
+        validMethodList.add("bubble");
+        validMethodList.add("tree");
+
+        do {
+            isValidInput = true;
+            System.out.println("Please enter sort method (bubble/merge/tree): ");
+            Scanner scanner = new Scanner(System.in);
+            sortMethod = scanner.next();
+            if(!validMethodList.contains(sortMethod)){
+                isValidInput = false;
+            }
+            logger.debug("Input sortMethod: " + sortMethod);
+        }while (!isValidInput);
+
+        logger.debug("Valid sort method: "+ sortMethod);
         return sortMethod;
     }
 
