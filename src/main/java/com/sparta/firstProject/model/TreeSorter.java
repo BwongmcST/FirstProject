@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.sparta.firstProject.main.Main.logger;
+
 public class TreeSorter implements Sorter {
    Node node;
    List<Integer> outPutIntegerList = new ArrayList<Integer>();
@@ -27,7 +29,7 @@ public class TreeSorter implements Sorter {
         for(int i=0; i< intArray.length;i++){
             intArray[i] = outPutIntegerList.get(i);
         }
-
+        logger.debug("Tree sort result: "+ Arrays.toString(intArray));
         return Arrays.toString(intArray);
     }
 
@@ -47,6 +49,7 @@ public class TreeSorter implements Sorter {
     public void sortNodes(Node node){
         if(node != null){
             sortNodes(node.left);
+            logger.debug("Tree sort progressing:"+node.value);
             outPutIntegerList.add(node.value);
             sortNodes(node.right);
         }
