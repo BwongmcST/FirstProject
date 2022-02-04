@@ -8,6 +8,7 @@ public class MergeSorter implements Sorter {
 
     @Override
     public String sort(int[] intArray){
+        long mergeSortStartTime = System.nanoTime();                        //Start Calculate execution time
         int arrayLength = intArray.length;
 
         if(arrayLength < 2){
@@ -31,7 +32,11 @@ public class MergeSorter implements Sorter {
 
         merge(intArray, leftHalf, rightHalf);
 
+        long mergeSortEndTime = System.nanoTime();                              //Calculate execution time
+        long mergeSortDuration = mergeSortEndTime - mergeSortStartTime;         //Calculate execution time
+        System.out.println("Merge sort execution time: " + mergeSortDuration);  //Calculate execution time
         logger.debug("Merge sort progressing: "+ Arrays.toString(intArray));
+        logger.debug("Merge sort execution time: " + mergeSortDuration );
         return Arrays.toString(intArray);
 
     }

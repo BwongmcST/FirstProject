@@ -8,6 +8,7 @@ public class BubbleSorter implements Sorter{
 
     @Override
     public String sort(int intArray[]){
+        long bubbleSortStartTime = System.nanoTime();                               //Start Calculate execution time
         int arrayLength = intArray.length;
 
         for(int i = 0; i < arrayLength -1; i++){
@@ -20,7 +21,11 @@ public class BubbleSorter implements Sorter{
                 }
             }
         }
+        long bubbleSortEndTime = System.nanoTime();                                 //Calculate execution time
+        long bubbleSortDuration = bubbleSortEndTime - bubbleSortStartTime;          //Calculate execution time
+        System.out.println("Bubble sort execution time: " + bubbleSortDuration);    //Calculate execution time
         logger.debug("Bubble sort result: "+ Arrays.toString(intArray));
+        logger.debug("Bubble sort execution time: " + bubbleSortDuration);
         return Arrays.toString(intArray);
 
         /*

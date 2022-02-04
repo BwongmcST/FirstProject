@@ -19,7 +19,7 @@ public class TreeSorter implements Sorter {
 */
     @Override
     public String sort(int[] intArray) {
-
+    long treeSortStartTime = System.nanoTime();                                     //Start Calculate execution time
         node = new Node(intArray[0]);
         for(int i:intArray){
             insertNode(node, i);
@@ -29,7 +29,11 @@ public class TreeSorter implements Sorter {
         for(int i=0; i< intArray.length;i++){
             intArray[i] = outPutIntegerList.get(i);
         }
+        long treeSortEndTime = System.nanoTime();                                //Calculate execution time
+        long treeSortDuration = treeSortEndTime - treeSortStartTime;             //Calculate execution time
+        System.out.println("Tree sort execution time: " + treeSortDuration);     //Calculate execution time
         logger.debug("Tree sort result: "+ Arrays.toString(intArray));
+        logger.debug("Tree sort execution time: " + treeSortDuration);
         return Arrays.toString(intArray);
     }
 
