@@ -5,21 +5,32 @@ import com.sparta.firstProject.view.SortView;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Main {
     public static Logger logger = LogManager.getLogger("Sorter Logger");
 
     public static void main(String[] args) {
+        List<String> sortMethodList = new ArrayList<>();
+        List<int[]> intArrayList = new ArrayList<>();
+        SortController sortController = new SortController();
 
-        //int[] testArrayBubble = Arrays.copyOf(testArray, testArray.length);
-        //int[] testArrayMerge = Arrays.copyOf(testArray, testArray.length);
         logger.debug("Launch sorting application");
         SortView sortView = new SortView();
+        int sortMethodAmount = sortView.getMethodsAmount();
         int[] intArray = sortView.getIntArray();
-        String sortMethod = sortView.getSortMethod();
-        SortController sortController = new SortController();
-        String result = sortController.sorting(sortMethod,intArray);
-        sortView.displaySortResult(result);
+
+        for(int i =0; i<sortMethodAmount;i++) {
+            sortMethodList.add(sortView.getSortMethod());
+            intArrayList.add(intArray.clone());
+        }
+        for(int i = 0; i<sortMethodAmount; i++) {
+            String result = sortController.sorting(sortMethodList.get(i), intArrayList.get(i));
+            sortView.displaySortResult(result);
+        }
 
         }
 
