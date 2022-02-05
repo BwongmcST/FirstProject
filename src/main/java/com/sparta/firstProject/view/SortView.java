@@ -10,6 +10,28 @@ import static com.sparta.firstProject.main.Main.logger;
 
 public class SortView {
 
+    public int getMethodsAmount(){
+        boolean isValidInput = true;
+        int amount = 1;
+        Scanner scanner = new Scanner(System.in);
+
+        do{
+            isValidInput = true;
+            System.out.println("Please input the amount of sort method: ");
+
+            try{amount = scanner.nextInt();
+                logger.debug("Received amount of method used: "+ amount);}
+            catch(InputMismatchException me) {
+                //me.printStackTrace();
+                scanner.next();
+                logger.warn("Incorrect input detected: Non-int value");
+                isValidInput = false;
+            }
+        }while (!isValidInput || amount <= 0);
+        logger.debug("Valid amount of method used: " + amount);
+        return amount;
+    }
+
     public int[] getIntArray(){
         int inputMin = 0;
         int inputMax = 0;
@@ -77,7 +99,7 @@ public class SortView {
         boolean isValidInput = true;
         String sortMethod;
 
-        List<String> validMethodList = new ArrayList<>();
+        List<String> validMethodList = new ArrayList<>();               //ValidMethodList store valid method input
         validMethodList.add("merge");
         validMethodList.add("bubble");
         validMethodList.add("tree");
@@ -87,7 +109,7 @@ public class SortView {
             System.out.println("Please enter sort method (bubble/merge/tree): ");
             Scanner scanner = new Scanner(System.in);
             sortMethod = scanner.next();
-            if(!validMethodList.contains(sortMethod)){
+            if(!validMethodList.contains(sortMethod)){                  //Check scanner input match with the ValidMethodList
                 isValidInput = false;
             }
             logger.debug("Input sortMethod: " + sortMethod);
