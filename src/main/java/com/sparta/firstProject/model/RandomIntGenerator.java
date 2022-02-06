@@ -10,7 +10,7 @@ import static com.sparta.firstProject.main.Main.logger;
 public class RandomIntGenerator {
 
 public int[] generateInt(int arrayLength, int min, int max) {
-    if(min >max){
+    if(min >max || arrayLength > (max - min + 1)){
         logger.warn("Invalid value: "+ min +" >" + max);
         return null;
     }
