@@ -14,11 +14,12 @@ public class Main {
     public static Logger logger = LogManager.getLogger("Sorter Logger");
 
     public static void main(String[] args) {
+        logger.info("Launch sorting application");
+
         List<String> sortMethodList = new ArrayList<>();
         List<int[]> intArrayList = new ArrayList<>();
         SortController sortController = new SortController();
 
-        logger.debug("Launch sorting application");
         SortView sortView = new SortView();
         int sortMethodAmount = sortView.getMethodsAmount();
         int[] intArray = sortView.getIntArray();
@@ -32,6 +33,6 @@ public class Main {
             sortView.displaySortResult(result);
         }
 
+        logger.info("End sorting application");
         }
-
 }
