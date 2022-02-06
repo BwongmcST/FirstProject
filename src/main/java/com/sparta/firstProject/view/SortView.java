@@ -28,7 +28,7 @@ public class SortView {
                 isValidInput = false;
             }
         }while (!isValidInput || amount <= 0);
-        logger.debug("Valid amount of method used: " + amount);
+        logger.info("Valid amount of method used: " + amount);
         return amount;
     }
 
@@ -55,7 +55,7 @@ public class SortView {
             }
         }while (!isValidInput);
 
-        logger.debug("Valid minimum value: "+ inputMin);
+        logger.info("Valid minimum value: "+ inputMin);
 
         do {
             isValidInput = true;
@@ -70,7 +70,7 @@ public class SortView {
             }
          }while (!isValidInput || inputMin >= inputMax);
 
-        logger.debug("Valid maximum value: "+ inputMax);
+        logger.info("Valid maximum value: "+ inputMax);
 
 
         do {
@@ -84,14 +84,14 @@ public class SortView {
                 logger.warn("Incorrect input detected: Non-int value");
                 isValidInput = false;
             }
-        }while (!isValidInput || inputLength > (inputMax-inputMin));
+        }while (!isValidInput || inputLength > (inputMax-inputMin+1));
 
-        logger.debug("Valid array length: "+ inputLength);
+        logger.info("Valid array length: "+ inputLength);
 
         System.out.println("Integer array generated: ");
         int[] intArray = randomIntGenerator.generateInt(inputLength,inputMin,inputMax);
         System.out.println(Arrays.toString(intArray));
-        logger.debug("Array generated: "+ Arrays.toString(intArray));
+        logger.info("Array generated: "+ Arrays.toString(intArray));
         return intArray;
     }
 
@@ -115,7 +115,7 @@ public class SortView {
             logger.debug("Input sortMethod: " + sortMethod);
         }while (!isValidInput);
 
-        logger.debug("Valid sort method: "+ sortMethod);
+        logger.info("Valid sort method: "+ sortMethod);
         return sortMethod;
     }
 
