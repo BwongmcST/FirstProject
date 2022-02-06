@@ -1,5 +1,6 @@
 package com.sparta.firstProjectTest;
 
+import com.sparta.firstProject.model.BubbleSorter;
 import com.sparta.firstProject.model.MergeSorter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -24,7 +25,7 @@ public class MergeSorterTest {
         Assertions.assertEquals(actual, expected);
     }
         @Test
-        @DisplayName("Multiple zero test")
+        @DisplayName("Multiple zero test // not expected to see in actual case")
         public void multipleZeroTest() {
             MergeSorter mergeSorter = new MergeSorter();
             int[] testArray = {0, 0, 11, 0, 0, 0, 2};
@@ -38,6 +39,40 @@ public class MergeSorterTest {
 
             Assertions.assertEquals(actual, expected);
         }
+        @Test
+        @DisplayName("Negative number test")
+        public void negativeNumberTest() {
+            MergeSorter mergeSorter = new MergeSorter();
+            int[] testArray = {-3, -154, -433, 22, -89, -40, 64};
+            int[] expectedArray = {-3, -154, -433, 22, -89, -40, 64};
+
+            mergeSorter.sort(testArray);
+            Arrays.sort(expectedArray);
+
+            String actual = Arrays.toString(testArray);
+            String expected = Arrays.toString(expectedArray);
+
+            Assertions.assertEquals(actual, expected);
+        }
+         @Test
+         @DisplayName("Ascending number test")
+         public void ascendingNumberTest() {
+             MergeSorter mergeSorter = new MergeSorter();
+            int[] testArray = {10, 11, 12, 13, 14, 15, 16};
+            int[] expectedArray = {10, 11, 12, 13, 14, 15, 16};
+
+            mergeSorter.sort(testArray);
+            Arrays.sort(expectedArray);
+
+            String actual = Arrays.toString(testArray);
+            String expected = Arrays.toString(expectedArray);
+
+            Assertions.assertEquals(actual, expected);
+    }
+
+
+
+
 
     }
 

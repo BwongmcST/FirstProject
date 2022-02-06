@@ -1,6 +1,7 @@
 package com.sparta.firstProjectTest;
 
 import com.sparta.firstProject.model.BubbleSorter;
+import com.sparta.firstProject.model.MergeSorter;
 import com.sparta.firstProject.model.TreeSorter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -42,5 +43,20 @@ public class TreeSorterTest {
         Assertions.assertEquals(actual, expected);
     }
 
+    @Test
+    @DisplayName("Ascending number test")
+    public void ascendingNumberTest() {
+        TreeSorter treeSorter = new TreeSorter();
+        int[] testArray = {10, 11, 12, 13, 14, 15, 16};
+        int[] expectedArray = {10, 11, 12, 13, 14, 15, 16};
+
+        treeSorter.sort(testArray);
+        Arrays.sort(expectedArray);
+
+        String actual = Arrays.toString(testArray);
+        String expected = Arrays.toString(expectedArray);
+
+        Assertions.assertEquals(actual, expected);
+    }
 
 }
