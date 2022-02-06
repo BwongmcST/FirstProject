@@ -22,7 +22,7 @@ You can also get the execution time for referencing the efficiency of each metho
 2) After running the main method, you should see the below message appeared:
 
 
-   ![alt-image](readmeSource/input1.jpg)
+![alt-image](readmeSource/input1.jpg)
    
 You can input how many sort methods you want in a single run.
 
@@ -98,13 +98,13 @@ The application contains 3 different levels of logging:
 
 The default logger level is Info, you can change the logger level in log4j2.properties
 
-Log information stored in sorterApplication.log
+Log output stored in sorterApplication.log
 
 
 ## Phase 1-5 Tasks check
 
 
-###**Phase 1:**
+###Phase 1:
 
 Write a program which will take an array of ints and sort it using a bubble sort algorithm and then a merge sort algorithm. Include JUnit tests for this and all subsequent phases (and all subsequent projects for the rest of time).
 
@@ -120,7 +120,7 @@ Created:
 
 - RandomIntGenerator
 
-###**Phase 2:**
+###Phase 2:
 
 Update your project to use MVC and start to incorporate some of the design principles discussed earlier in the course (OOP, SOLID, design patterns). Create classes which implements MVC, including SortManager (controller) and a DisplayManager (view) classes. The code should include a basic factory pattern to determine which sorter to use. Make sure packages are created properly and the structure follows the MVC pattern. Create an interface which both sort classes can implement and make sure your application uses this interface where possible.
 
@@ -141,7 +141,7 @@ Controller:
 - SortController
 
 
-###**Phase 3:**
+###Phase 3:
 
 Add logging code into the Sort Manager project. Set up log4j in the project and add a properties file. Create logs at different levels and fully test the resulting output. Have output going to the console and to a log file created in the resources directory. Ensure there are meaningful log messages added to the project and that they reflect the needs of the levels for which they are set.
 
@@ -158,7 +158,7 @@ Created:
 - Warn: Invalid input
 
 
-###**Phase 4:**
+###Phase 4:
 
 Integrate a new class to implement a binary search tree approach for sorting, so that the BST can be called in the same way as the other sort algorithms. The new class should implement the current Sorter interface. Add code that calls the BST and passes in the array that will be used to construct the tree and then return a sorted array. Use the Facade design pattern for this step and implement a nested class to represent a node in the tree.
 
@@ -168,10 +168,16 @@ Created:
 - TreeSorter
 
 
-###**Phase 5:**
+###Phase 5:
 
 Add timing information to the project and allow the user to select multiple algorithms to compare their performance.
 
 - Using System.nanoTime() in each sorter classes
 - Using clone method to make sure 3 sorter method won't share the same array
-- Using arrays to 
+- Using array/arraylist to store multiple method instructions
+
+
+## Process Sample:
+
+![alt-image](readmeSource/sample.jpg)
+
